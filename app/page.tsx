@@ -1,65 +1,126 @@
-import Image from "next/image";
+'use client';
+import React, { useState } from 'react';
 
 export default function Home() {
+  const [formData, setFormData] = useState({ name: '', email: '', service: 'web', details: '' });
+  const [submitted, setSubmitted] = useState(false);
+
+  // Formspree teslimatı için handler
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Formspree entegrasyonu (Buradaki XXXXXX kısmını kendi Formspree ID'nle değiştirebilirsin kanka)
+    const response = await fetch('https://formspree.io/f/XXXXXX', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      alert("Form gönderilirken bir hata oluştu kanka, Formspree linkini kontrol et!");
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 font-sans selection:bg-purple-500 selection:text-white">
+      {/* Header */}
+      <header className="border-b border-purple-500/10 bg-neutral-900/40 backdrop-blur-md sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent tracking-widest">
+            🌐 WEB APP CODE HUB
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <a href="#order-form" className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 px-6 py-2 rounded-xl font-bold text-xs uppercase tracking-wider transition-all text-white">
+            Order Custom Build
+          </a>
+        </div>
+      </header>
+
+      <main className="max-w-4xl mx-auto px-4 py-16">
+        {/* Hero */}
+        <section className="text-center mb-16">
+          <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400 border border-cyan-500/20 px-3 py-1 rounded-full bg-cyan-500/5">
+            Premium Software & Automation Solutions
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black mt-6 mb-6 tracking-tight text-white leading-tight">
+            Get Your Web Site, Automation Bot <br />
+            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              & Mobile App Developed
+            </span>
+          </h2>
+          <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto">
+            We build your dream project from scratch. Whether you need a ready-to-go boilerplate or a fully customized software solution tailored to your business needs.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+        </section>
+
+        {/* Premium Core Template Showcase: MiraMi */}
+        <section className="mb-20 bg-neutral-900/40 border border-neutral-800 rounded-2xl p-6 md:p-8">
+          <div className="flex justify-between items-start mb-4">
+            <span className="bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-purple-500/20">
+              Premium Source Code Available
+            </span>
+            <span className="text-cyan-400 font-mono font-bold text-sm">$1,199</span>
+          </div>
+          <h3 className="text-2xl font-bold text-white mb-2">📱 MiraMi: Advanced Mobile App Architecture</h3>
+          <p className="text-neutral-400 text-sm mb-4 leading-relaxed">
+            A production-ready, ultra-detailed baby development tracking and analytical assistant application codebase built with React Native and Expo. Perfect architecture for entrepreneurs looking to launch their mobile app instantly!
+          </p>
+          <a href="#order-form" onClick={() => setFormData({...formData, service: 'template', details: 'Interested in purchasing the MiraMi mobile application template codebase ($1,199).'})} className="text-xs text-cyan-400 font-bold uppercase tracking-wider hover:underline cursor-pointer">
+            Acquire Source Code &rarr;
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
+
+        {/* Order Intake Form */}
+        <section id="order-form" className="bg-neutral-900 border border-neutral-800 rounded-3xl p-8 md:p-12 relative">
+          <h3 className="text-2xl font-bold text-white mb-2 text-center">Start Your Project</h3>
+          <p className="text-neutral-400 text-xs md:text-sm text-center mb-8">
+            Fill out the request form below, specify your software requirements, and let's start planning immediately.
+          </p>
+
+          {submitted ? (
+            <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-6 rounded-xl text-center font-semibold">
+              🎉 Thank you! Your request has been successfully received. I will contact you shortly to discuss project details and pricing.
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">Your Name / Company</label>
+                  <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:border-purple-500 focus:outline-none transition-all text-white" placeholder="John Doe" />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">Email Address</label>
+                  <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:border-purple-500 focus:outline-none transition-all text-white" placeholder="john@example.com" />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">What do you want to build?</label>
+                <select value={formData.service} onChange={(e) => setFormData({...formData, service: e.target.value})} className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:border-purple-500 focus:outline-none transition-all text-white">
+                  <option value="web">🌐 Custom Web Site Development</option>
+                  <option value="bot">🤖 Automation & Custom Script / Bot</option>
+                  <option value="template">📱 Premium Mobile App Boilerplate (MiraMi)</option>
+                  <option value="other">💡 Other Bespoke Software Engineering</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">Project Specifications</label>
+                <textarea required rows={4} value={formData.details} onChange={(e) => setFormData({...formData, details: e.target.value})} className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:border-purple-500 focus:outline-none transition-all text-white resize-none" placeholder="Describe the app features, web platform scope, or automation bot workflow you need..." />
+              </div>
+
+              <button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:opacity-90 text-white font-black py-4 rounded-xl text-xs uppercase tracking-widest shadow-xl shadow-purple-500/10 transition-all">
+                Launch Project Discovery
+              </button>
+            </form>
+          )}
+        </section>
       </main>
+
+      <footer className="border-t border-neutral-900 py-8 text-center text-[10px] font-mono text-neutral-600">
+        &copy; 2026 WEB APP CODE HUB. ALL CODES COMPLY WITH MODERN REACT NATIVE & NEXT.JS STANDARDS.
+      </footer>
     </div>
   );
 }
