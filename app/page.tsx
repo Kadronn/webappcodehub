@@ -87,14 +87,14 @@ export default function Home() {
             <img 
               src="/mirami-banner.jpg" 
               alt="MiraMi Smart Infant Development Tracker Infographic" 
-              className="w-full h-auto block"
+              className="w-full h-auto block mx-auto"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 const parent = e.currentTarget.parentElement;
                 if(parent) {
                   const div = document.createElement('div');
                   div.className = 'p-8 text-center text-sm bg-pink-50 border border-pink-200 text-pink-800 font-mono';
-                  div.innerText = '⚠️ MiraMi Görsel Alanı: Projenin "public/" klasörünün altına "1000172330.jpg" görselini "mirami-banner.jpg" adıyla kopyaladığında bu alan otomatik olarak şahane infografiğe dönüşecektir kanka!';
+                  div.innerText = '⚠️ Klasör Hatası Kontrolü: Bilgisayarındaki "1000172330.jpg" resmini projenin "public/" klasörünün içine "mirami-banner.jpg" adıyla attığından emin ol kanka!';
                   parent.appendChild(div);
                 }
               }}
@@ -102,28 +102,28 @@ export default function Home() {
           </div>
 
           <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-            Mobil uygulama pazarına girip anında reklam ve abonelik geliri elde etmek isteyen girişimciler için kaçırılmayacak eksiksiz bir projedir. Canlı APK demosu mevcuttur, test etmek için aşağıdaki formdan talep göndebilirsiniz!
+            Mobil uygulama pazarına girip anında reklam ve abonelik geliri elde etmek isteyen girişimciler için kaçırılmayacak eksiksiz bir projedir. Canlı APK demosu mevcuttur, test etmek için aşağıdaki formdan talep gönderebilirsiniz!
           </p>
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-slate-100">
-            <span className="text-xs text-slate-500 font-medium">Bu fiyata projenun tüm kaynak kodları ve mülkiyeti dahildir.</span>
+            <span className="text-xs text-slate-500 font-medium">Bu fiyata projenin tüm kaynak kodları ve mülkiyeti dahildir.</span>
             <a href="#order-form" onClick={() => setFormData({...formData, service: 'mirami', details: 'MiraMi Hazır Mobil Uygulama projesini 5.000 TL lansman fiyatıyla satın almak ve canlı APK demosunu test etmek istiyorum.'})} className="bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-md shadow-pink-600/10 inline-flex items-center gap-1 cursor-pointer w-full sm:w-auto justify-center">
               APK Demosunu İste & Satın Al &rarr;
             </a>
           </div>
         </section>
 
-        {/* 🛠️ AJANS HİZMETLERİMİZ (5 ANA BAŞLIK) */}
+        {/* 🛠️ AJANS HİZMETLERİMİZ */}
         <section className="mb-20">
           <h3 className="text-2xl font-black text-slate-900 mb-8 text-center tracking-tight">Gelişmiş Yazılım ve Tasarım Hizmetlerimiz</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            {/* 1. Sıfırdan Mobil Uygulama Yapımı */}
+            {/* 1. Sıfırdan Mobil Uygulama Yapımı (Daha Profesyonel Yazılımcı Görseliyle Değişti) */}
             <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between">
               <div>
                 <div className="h-48 relative overflow-hidden bg-slate-900">
-                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Mobil Uygulama Yapımı" className="w-full h-full object-cover opacity-85" />
+                  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Mobil Uygulama Yapımı" className="w-full h-full object-cover opacity-85" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-950/80 px-2 py-0.5 rounded self-start mb-1">React Native & Expo</span>
                     <div className="font-bold text-white text-sm">Sıfırdan Özel Mobil Uygulama Geliştirme</div>
@@ -157,7 +157,7 @@ export default function Home() {
                     <h4 className="text-base font-bold text-slate-900">Kurumsal Web Sitesi Yapımı</h4>
                     <span className="text-emerald-600 font-mono font-black text-sm">2.000 TL</span>
                   </div>
-                  <p className="text-slate-600 text-xs leading-relaxed">Şirketiniz veya projeniz için sıfırdan yönetim panelli, SEO uyumlu ve yıldırım hızında modern web siteleri inşa ediyoruz.</p>
+                  <p className="text-slate-600 text-xs leading-relaxed">Şirketiniz veya projeniz için sıfırdan yönetim panelli, SEO uyumlu begging hızlı modern web siteleri inşa ediyoruz.</p>
                 </div>
               </div>
               <div className="p-6 pt-0">
@@ -211,8 +211,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 5. Yapay Zeka Entegrasyonları */}
-            <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between md:col-span-2 md:max-w-md md:mx-auto w-full">
+            {/* 5. Yapay Zeka Entegrasyonları (Hizalama Hatası Tamamen Giderildi kanka) */}
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between md:col-span-2 max-w-md mx-auto w-full">
               <div>
                 <div className="h-48 relative overflow-hidden bg-slate-900">
                   <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80" alt="Yapay Zeka" className="w-full h-full object-cover opacity-85" />
@@ -269,7 +269,7 @@ export default function Home() {
                   <option value="web_design">🎨 Web Tasarım, Geliştirme & Yenileme (1.500 TL)</option>
                   <option value="bot">🤖 Süreç Otomasyonu & Özel Botlar (2.500 TL)</option>
                   <option value="ai">🧠 Yapay Zeka Entegrasyonları (3.000 TL)</option>
-                  <option value="mirami">✨ MiraMi Hazır Mobil Proje Satın Alma (5.000 TL)</option>
+                  <option value="mirami">✨ MiraMi Satılık Hazır Mobil Uygulama (Tüm Haklarıyla) (5.000 TL)</option>
                 </select>
               </div>
 
