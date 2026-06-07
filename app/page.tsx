@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 export default function Home() {
-  const [formData, setFormData] = useState({ name: '', email: '', service: 'template', details: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', service: 'mobile_app', details: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -20,7 +20,7 @@ export default function Home() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert("Sistemde bir yoğunluk var kanka, formu doğrudan iletemedik.");
+        alert("Sistemde bir yoğunluk var kanka, formu iletemedik.");
       }
     } catch (error) {
       alert("Bağlantı hatası oluştu!");
@@ -59,76 +59,19 @@ export default function Home() {
             </span>
           </h2>
           <p className="text-slate-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            İhtiyacınız olan tüm dijital altyapıyı modern Next.js ve React Native mimarileriyle, piyasanın en rekabetçi ve en uygun fiyatlarıyla anahtar teslim hazırlıyoruz.
+            İhtiyacınız olan tüm dijital altyapıyı modern Next.js ve React Native mimarileriyle, piyasanın en rekabetçi fiyatlarıyla anahtar teslim hazırlıyoruz.
           </p>
         </section>
 
-        {/* HİZMETLERİMİZ VE GÖRSEL REHBERLER */}
-        <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Hizmet 1: Web Tasarım */}
-          <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between">
-            <div>
-              {/* Örnek Web Tasarım Görsel Alanı */}
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex flex-col items-center justify-center text-white relative p-6 text-center">
-                <div className="text-4xl mb-2">🌐</div>
-                <div className="font-bold text-lg">Next.js & Tailwind Standartlarında Kurumsal Web Siteleri</div>
-                <div className="text-xs opacity-80 mt-1">SEO Uyumlu, Mobil Destekli, Yıldırım Hızında Tasarımlar</div>
-                <div className="absolute bottom-2 right-4 bg-white/20 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded">Örnek Şablon</div>
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="text-lg font-bold text-slate-900">Kurumsal Web Sitesi Yapımı</h4>
-                  <span className="text-emerald-600 font-mono font-black text-lg">2.000 TL</span>
-                </div>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Şirketiniz veya şahsınız için modern, yönetim panelli, Google'da üst sıralara çıkmaya hazır profesyonel web siteleri geliştiriyoruz. 
-                </p>
-              </div>
-            </div>
-            <div className="p-6 pt-0">
-              <a href="#order-form" onClick={() => setFormData({...formData, service: 'web', details: '2.000 TL fiyatlı Özel Web Sitesi Geliştirme hizmeti için detaylı bilgi almak istiyorum.'})} className="text-xs text-blue-600 font-bold uppercase block text-center border border-blue-200 py-2.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">
-                Detayları Konuşalım &rarr;
-              </a>
-            </div>
-          </div>
-
-          {/* Hizmet 2: Otomasyon ve Bot */}
-          <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between">
-            <div>
-              {/* Örnek Otomasyon Görsel Alanı */}
-              <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-900 flex flex-col items-center justify-center text-white relative p-6 text-center">
-                <div className="text-4xl mb-2">🤖</div>
-                <div className="font-bold text-lg">Özel Süreç Otomasyonu & Entegrasyon Botları</div>
-                <div className="text-xs opacity-80 mt-1">Veri Çekme, Otomatik İş Akışları, Node.js Altyapısı</div>
-                <div className="absolute bottom-2 right-4 bg-white/20 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded">Örnek Sistem</div>
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="text-lg font-bold text-slate-900">Süreç Otomasyonu & Bot</h4>
-                  <span className="text-emerald-600 font-mono font-black text-lg">2.500 TL</span>
-                </div>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Tekrarlayan işlerinizi sıfıra indiren veri kazıma (scraping), sosyal medya veya fatura/muhasebe entegrasyon botlarını bütçe dostu fiyatla hazırlıyoruz.
-                </p>
-              </div>
-            </div>
-            <div className="p-6 pt-0">
-              <a href="#order-form" onClick={() => setFormData({...formData, service: 'bot', details: '2.500 TL fiyatlı Otomasyon ve Özel Bot Yazılımı hizmeti için detaylı bilgi almak istiyorum.'})} className="text-xs text-blue-600 font-bold uppercase block text-center border border-blue-200 py-2.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">
-                Detayları Konuşalım &rarr;
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ÜRÜN VİTRİNİ: SATILIK HAZIR MOBİL UYGULAMA (MIRAMI) */}
-        <section className="mb-16 bg-white border-2 border-blue-500 rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl shadow-sm">
-            AMBALEJLI HAZIR MOBİL PROJE
+        {/* 🌟 BAĞIMSIZ ÖZEL VİTRİN: SATILIK HAZIR MOBİL UYGULAMA (MIRAMI) */}
+        <section className="mb-20 bg-white border-2 border-pink-400 rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 bg-pink-500 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl shadow-sm">
+            ÖZEL HAZIR MOBİL PROJE (SATILIK)
           </div>
           
           <div className="flex justify-between items-start mb-4 mt-2">
-            <span className="bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-emerald-200">
-              Demo APK Hazır / Kaynak Kod Lisansı Dahil
+            <span className="bg-pink-50 text-pink-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-pink-200">
+              Canlı APK Demosu Hazır / Tüm Haklarıyla Devir
             </span>
             <div>
               <span className="text-emerald-600 font-mono font-black text-2xl md:text-3xl block">5.000 TL</span>
@@ -139,40 +82,158 @@ export default function Home() {
             📱 MiraMi: Komple Bebek Takip & Akıllı Asistan Uygulaması
           </h3>
           
-          {/* Senin Şahane Görselin Buraya Geliyor Kanka! */}
-          <div className="mb-6 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner group">
+          {/* MiraMi Ana Görsel Alanı */}
+          <div className="mb-6 rounded-xl overflow-hidden border border-pink-100 bg-slate-50 shadow-sm">
             <img 
-              src="1000172330.jpg" 
-              alt="MiraMi Smart Infant Development Tracker - Havva İpek Kadron" 
-              className="w-full h-auto object-cover"
+              src="/mirami-banner.jpg" 
+              alt="MiraMi Smart Infant Development Tracker Infographic" 
+              className="w-full h-auto block"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const parent = e.currentTarget.parentElement;
+                if(parent) {
+                  const div = document.createElement('div');
+                  div.className = 'p-8 text-center text-sm bg-pink-50 border border-pink-200 text-pink-800 font-mono';
+                  div.innerText = '⚠️ MiraMi Görsel Alanı: Projenin "public/" klasörünün altına "1000172330.jpg" görselini "mirami-banner.jpg" adıyla kopyaladığında bu alan otomatik olarak şahane infografiğe dönüşecektir kanka!';
+                  parent.appendChild(div);
+                }
+              }}
             />
-            <div className="p-3 bg-slate-900 text-white text-center text-xs font-mono">
-              Visualized Asset: 1000172330.jpg | Tüm sayaç, istatistik ve dil seçimi ekranları dahildir.
-            </div>
           </div>
 
-          <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-            Mobil uygulama pazarına girip anında reklam ve abonelik geliri elde etmek isteyen girişimciler için kaçırılmayacak, her şeyiyle eksiksiz <strong className="text-slate-900">React Native & Expo</strong> tabanlı tam sürüm projedir. Canlı APK demosu mevcuttur, test etmek için aşağıdaki formdan talep gönderebilirsiniz!
+          <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+            Mobil uygulama pazarına girip anında reklam ve abonelik geliri elde etmek isteyen girişimciler için kaçırılmayacak eksiksiz bir projedir. Canlı APK demosu mevcuttur, test etmek için aşağıdaki formdan talep göndebilirsiniz!
           </p>
 
-          {/* Dahili Özellikler Listesi */}
-          <div className="mb-6 bg-slate-50 rounded-xl p-4 md:p-6 border border-slate-200">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">📦 Uygulamanın İçindeki Canavar Özellikler:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700">
-              <div>⏱️ <strong>Uyku & Aktivite Sayaçları:</strong> Kusursuz zamanlama takibi.</div>
-              <div>🍼 <strong>Son Beslenme Saati:</strong> Sol/sağ göğüs ve mama mililitre kayıtları.</div>
-              <div>🪘 <strong>Anne Sütü Sağım Sayacı:</strong> Günlük sağım miktarı verileri.</div>
-              <div>💩 <strong>Bez Değişimi Takibi:</strong> Islak, kirli bez durum geçmişi.</div>
-              <div>📊 <strong>Gelişmiş İstatistik Paneli:</strong> Grafikli, gün gün liste analizi.</div>
-              <div>💡 <strong>Akıllı Asistan Modülü:</strong> Ebeveynler için pratik gelişim rehberi rehberliği.</div>
-            </div>
-          </div>
-
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-slate-100">
-            <span className="text-xs text-slate-500 font-medium">Bu fiyata projenin tüm kaynak kodları ve mülkiyeti dahildir.</span>
-            <a href="#order-form" onClick={() => setFormData({...formData, service: 'template', details: 'MiraMi Hazır Mobil Uygulama projesini 5.000 TL lansman fiyatıyla satın almak ve canlı APK demosunu test etmek istiyorum.'})} className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-md shadow-blue-600/10 inline-flex items-center gap-1 cursor-pointer w-full sm:w-auto justify-center">
+            <span className="text-xs text-slate-500 font-medium">Bu fiyata projenun tüm kaynak kodları ve mülkiyeti dahildir.</span>
+            <a href="#order-form" onClick={() => setFormData({...formData, service: 'mirami', details: 'MiraMi Hazır Mobil Uygulama projesini 5.000 TL lansman fiyatıyla satın almak ve canlı APK demosunu test etmek istiyorum.'})} className="bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-md shadow-pink-600/10 inline-flex items-center gap-1 cursor-pointer w-full sm:w-auto justify-center">
               APK Demosunu İste & Satın Al &rarr;
             </a>
+          </div>
+        </section>
+
+        {/* 🛠️ AJANS HİZMETLERİMİZ (5 ANA BAŞLIK) */}
+        <section className="mb-20">
+          <h3 className="text-2xl font-black text-slate-900 mb-8 text-center tracking-tight">Gelişmiş Yazılım ve Tasarım Hizmetlerimiz</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* 1. Sıfırdan Mobil Uygulama Yapımı */}
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="h-48 relative overflow-hidden bg-slate-900">
+                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Mobil Uygulama Yapımı" className="w-full h-full object-cover opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-950/80 px-2 py-0.5 rounded self-start mb-1">React Native & Expo</span>
+                    <div className="font-bold text-white text-sm">Sıfırdan Özel Mobil Uygulama Geliştirme</div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-base font-bold text-slate-900">Sıfırdan Mobil Uygulama Yapımı</h4>
+                    <span className="text-emerald-600 font-mono font-black text-sm">5.000 TL</span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed">Fikirlerinizi Android ve iOS marketlerde yer alacak yüksek performanslı, modern mobil uygulamalara dönüştürüyoruz.</p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <a href="#order-form" onClick={() => setFormData({...formData, service: 'mobile_app', details: 'Sıfırdan özel mobil uygulama yaptırmak istiyorum.'})} className="text-xs text-blue-600 font-bold uppercase block text-center border border-blue-200 py-2 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">Talep Oluştur &rarr;</a>
+              </div>
+            </div>
+
+            {/* 2. Sıfırdan Web Sitesi Yapımı */}
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="h-48 relative overflow-hidden bg-slate-900">
+                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web Sitesi Yapımı" className="w-full h-full object-cover opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 bg-indigo-950/80 px-2 py-0.5 rounded self-start mb-1">Next.js & Full-Stack</span>
+                    <div className="font-bold text-white text-sm">Kurumsal & E-Ticaret Çözümleri</div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-base font-bold text-slate-900">Kurumsal Web Sitesi Yapımı</h4>
+                    <span className="text-emerald-600 font-mono font-black text-sm">2.000 TL</span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed">Şirketiniz veya projeniz için sıfırdan yönetim panelli, SEO uyumlu ve yıldırım hızında modern web siteleri inşa ediyoruz.</p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <a href="#order-form" onClick={() => setFormData({...formData, service: 'web_build', details: 'Sıfırdan kurumsal web sitesi yapımı hizmeti almak istiyorum.'})} className="text-xs text-blue-600 font-bold uppercase block text-center border border-blue-200 py-2 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">Talep Oluştur &rarr;</a>
+              </div>
+            </div>
+
+            {/* 3. Web Tasarım, Geliştirme ve Yenileme */}
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="h-48 relative overflow-hidden bg-slate-900">
+                  <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Web Tasarım Geliştirme" className="w-full h-full object-cover opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-purple-400 bg-purple-950/80 px-2 py-0.5 rounded self-start mb-1">UI/UX & Modernizasyon</span>
+                    <div className="font-bold text-white text-sm">Tasarım Değişimi & Sitenizi Geliştirme</div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-base font-bold text-slate-900">Web Tasarım & Arayüz Yenileme</h4>
+                    <span className="text-emerald-600 font-mono font-black text-sm">1.500 TL</span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed">Mevcut web sitenizin eskiyen yüzünü tamamen yeniliyor, modern tasarım trendlerine göre baştan geliştirip canlandırıyoruz.</p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <a href="#order-form" onClick={() => setFormData({...formData, service: 'web_design', details: 'Mevcut web sitemin tasarımını yenilemek ve geliştirmek istiyorum.'})} className="text-xs text-blue-600 font-bold uppercase block text-center border border-blue-200 py-2 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">Talep Oluştur &rarr;</a>
+              </div>
+            </div>
+
+            {/* 4. Otomasyon Sistemleri ve Bot Yapımı */}
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="h-48 relative overflow-hidden bg-slate-900">
+                  <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=800&q=80" alt="Otomasyon ve Bot" className="w-full h-full object-cover opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded self-start mb-1">Node.js Bot Altyapısı</span>
+                    <div className="font-bold text-white text-sm">Süreç Otomasyonu & Veri Kazıma</div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-base font-bold text-slate-900">Süreç Otomasyonu & Bot Yapımı</h4>
+                    <span className="text-emerald-600 font-mono font-black text-sm">2.500 TL</span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed">Tekrarlayan manuel işlerinizi, veri çekme (scraping) süreçlerinizi veya API entegrasyonlarınızı bütçe dostu botlarla otomatikleştiriyoruz.</p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <a href="#order-form" onClick={() => setFormData({...formData, service: 'bot', details: 'Özel süreç otomasyonu veya bot yaptırmak istiyorum.'})} className="text-xs text-blue-600 font-bold uppercase block text-center border border-blue-200 py-2 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">Talep Oluştur &rarr;</a>
+              </div>
+            </div>
+
+            {/* 5. Yapay Zeka Entegrasyonları */}
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden flex flex-col justify-between md:col-span-2 md:max-w-md md:mx-auto w-full">
+              <div>
+                <div className="h-48 relative overflow-hidden bg-slate-900">
+                  <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80" alt="Yapay Zeka" className="w-full h-full object-cover opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400 bg-amber-950/80 px-2 py-0.5 rounded self-start mb-1">AI Modülleri & Chatbot</span>
+                    <div className="font-bold text-white text-sm">Akıllı Sistem Entegrasyonları</div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-base font-bold text-slate-900">Yapay Zeka Entegrasyonları</h4>
+                    <span className="text-emerald-600 font-mono font-black text-sm">3.000 TL</span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed">Web sitelerinize veya uygulamalarınıza akıllı chatbotlar, veri analitiği veya yapay zeka destekli otomatik içerik araçları bağlıyoruz.</p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <a href="#order-form" onClick={() => setFormData({...formData, service: 'ai', details: 'Yapay zeka entegrasyon hizmetleri hakkında bilgi almak istiyorum.'})} className="text-xs text-blue-600 font-bold uppercase block text-center border border-blue-200 py-2 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">Talep Oluştur &rarr;</a>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -180,7 +241,7 @@ export default function Home() {
         <section id="order-form" className="bg-white border border-blue-100 rounded-2xl p-8 md:p-10 shadow-lg">
           <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">İletişime Geçin & Sipariş Verin</h3>
           <p className="text-slate-500 text-xs md:text-sm text-center mb-8">
-            Piyasanın en uygun fiyatlarıyla çalışmak veya MiraMi APK demosunu talep etmek için formu doldurun, anında dönüş yapalım.
+            Piyasanın en uygun fiyatlarıyla çalışmak veya hazır projeleri test etmek için formu doldurun, anında dönüş yapalım.
           </p>
 
           {submitted ? (
@@ -203,15 +264,18 @@ export default function Home() {
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">İlgi Duyduğunuz Hizmet / Proje</label>
                 <select value={formData.service} onChange={(e) => setFormData({...formData, service: e.target.value})} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:border-blue-500 focus:bg-white focus:outline-none transition-all text-slate-900">
-                  <option value="template">📱 MiraMi Hazır Mobil Uygulama Kaynak Kodları (5.000 TL)</option>
-                  <option value="web">🌐 Özel Web Sitesi Geliştirme (2.000 TL)</option>
+                  <option value="mobile_app">📱 Sıfırdan Mobil Uygulama Yapımı (5.000 TL)</option>
+                  <option value="web_build">🌐 Kurumsal Web Sitesi Yapımı (2.000 TL)</option>
+                  <option value="web_design">🎨 Web Tasarım, Geliştirme & Yenileme (1.500 TL)</option>
                   <option value="bot">🤖 Süreç Otomasyonu & Özel Botlar (2.500 TL)</option>
+                  <option value="ai">🧠 Yapay Zeka Entegrasyonları (3.000 TL)</option>
+                  <option value="mirami">✨ MiraMi Hazır Mobil Proje Satın Alma (5.000 TL)</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Mesajınız / Proje Detayları</label>
-                <textarea required rows={4} value={formData.details} onChange={(e) => setFormData({...formData, details: e.target.value})} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:border-blue-500 focus:bg-white focus:outline-none transition-all text-slate-900 resize-none placeholder-slate-400" placeholder="İsteklerinizi buraya yazın, APK demo talebiyse lütfen belirtin..." />
+                <textarea required rows={4} value={formData.details} onChange={(e) => setFormData({...formData, details: e.target.value})} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:border-blue-500 focus:bg-white focus:outline-none transition-all text-slate-900 resize-none placeholder-slate-400" placeholder="İsteklerinizi buraya yazın..." />
               </div>
 
               <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-bold py-3.5 rounded-lg text-xs uppercase tracking-widest shadow-md shadow-blue-600/10 transition-all cursor-pointer">
