@@ -30,7 +30,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen text-slate-800 font-sans selection:bg-blue-600 selection:text-white bg-[#f1f5f9] relative bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px]">
+    <div 
+      className="min-h-screen text-slate-800 font-sans selection:bg-blue-600 selection:text-white bg-[#f8fafc] relative"
+      style={{ 
+        backgroundImage: 'radial-gradient(#cbd5e1 1.2px, transparent 1.2px)', 
+        backgroundSize: '20px 20px' 
+      }}
+    >
       
       {/* Üst Menü / Navbar */}
       <header className="border-b border-blue-200/60 bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
@@ -96,7 +102,7 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-slate-100">
-            <span className="text-xs text-slate-500 font-semibold">Bu fiyata tüm kaynak kodları, tasarım assetleri og mülkiyet dahildir.</span>
+            <span className="text-xs text-slate-500 font-semibold">Bu fiyata tüm kaynak kodları, tasarım assetleri ve mülkiyet dahildir.</span>
             <a href="#order-form" onClick={() => setFormData({...formData, service: 'mirami', details: 'MiraMi Hazır Satılık Mobil Uygulama projesini incelemek ve satın almak istiyorum.'})} className="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all shadow-md inline-flex items-center gap-1 cursor-pointer w-full sm:w-auto justify-center">
               APK Demosunu İste & Satın Al &rarr;
             </a>
@@ -110,7 +116,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            {/* 1. Web Sitesi Açma ve Yapma */}
+            {/* 1. Web Sitesi Açma */}
             <div className="bg-white rounded-2xl border border-blue-100 shadow-lg overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div>
                 <div className="h-48 relative overflow-hidden bg-slate-900">
@@ -208,8 +214,8 @@ export default function Home() {
                 <div className="h-48 relative overflow-hidden bg-slate-900">
                   <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Web Tasarımı" className="w-full h-full object-cover opacity-85" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-purple-400 bg-purple-950/80 px-2 py-0.5 rounded border border-purple-500/20 self-start mb-1">Arayüz Revizyonu</span>
-                    <div className="font-bold text-white text-sm">Modern Görünüm</div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-purple-400 bg-purple-950/80 px-2 py-0.5 rounded border border-purple-500/20 self-start mb-1">Sade Tasarım</span>
+                    <div className="font-bold text-white text-sm">Web Tasarımı</div>
                   </div>
                 </div>
                 <div className="p-6">
