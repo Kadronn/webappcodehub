@@ -20,7 +20,7 @@ export default function Home() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert("Sistemde bir yoğunluk var kanka, formu iletemedik.");
+        alert("Sistemde bir yoğunluk var ,  formu iletemedik.");
       }
     } catch (error) {
       alert("Bağlantı hatası oluştu!");
@@ -44,7 +44,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <span className="text-xl">✨</span>
             <h1 className="text-base font-black tracking-wider text-slate-950">
-              MIRAMI | <span className="text-blue-600">WEB & MOBİL UYGULAMA YAPMA OFİSİ</span>
+              MIRAMİSİ | <span className="text-blue-600">WEB & MOBİL UYGULAMA YAPMA OFİSİ</span>
             </h1>
           </div>
           <a href="#order-form" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-md">
@@ -284,7 +284,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-blue-200 py-8 text-center text-[10px] font-mono text-slate-400 bg-white relative z-10">
-        &copy; 2026 MIRAMI WEB & MOBİL UYGULAMA YAPMA OFİSİ. TÜM SİSTEMLER EN MODERN YAZILIM STANDARTLARIYLA ÇALIŞMAKTADIR.
+        &copy; 2026 MIRAMISI WEB & MOBİL UYGULAMA YAPMA OFİSİ. TÜM SİSTEMLER EN MODERN YAZILIM STANDARTLARIYLA ÇALIŞMAKTADIR.
       </footer>
     </div>
   );
