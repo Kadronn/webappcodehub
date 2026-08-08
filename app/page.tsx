@@ -252,5 +252,3 @@ Talep Gönder
 </div>
 );
 }
-)
-}
